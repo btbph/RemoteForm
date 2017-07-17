@@ -1,27 +1,32 @@
-
-<div class="res">
-  <div id = "count">
-    <%= @messages.length %>
-    <%= render 'queries' %>
-  </div>
-  <div class="containerList">
-    <ul id="msgs">
-      <% @messages.each do |item| %>
-          <li>
-            <%= item.text %>
-            <%= item.created_at %>
-          </li>
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+      <%= form_with(model: @message, url: form_handler_path) do |f| %>
+          <p>
+            <%= f.label :text, 'Type Message' %><br>
+            <%= f.text_area :text %>
+          </p>
+          <p>
+            <%= f.submit 'Send', class: 'btn btn-primary' %>
+          </p>
       <% end %>
-    </ul>
+    </div>
+
+    <div class="col-6">
+      <div id = "count">
+        <%= @messages.length %>
+        <%= render 'queries' %>
+      </div>
+      <div class="containerList">
+        <ul id="msgs">
+          <% @messages.each do |item| %>
+              <li>
+                <%= item.text %>
+                <%= item.created_at %>
+              </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
   </div>
 </div>
-
-<%= form_with(model: @message, url: form_handler_path) do |f| %>
-    <p>
-      <%= f.label :text %><br>
-      <%= f.text_area :text %>
-    </p>
-    <p>
-      <%= f.submit('Send')%>
-    </p>
-<% end %>
