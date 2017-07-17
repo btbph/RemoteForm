@@ -1,0 +1,9 @@
+<% if (Message.count == 0) or (Message.count >=4)%>
+    Запросов
+<% end %>
+<% if Message.count == 1 %>
+    Запрос
+<% end %>
+<% if (Message.count == 2) or (Message.count == 3)%>
+    Запроса
+<% end %>

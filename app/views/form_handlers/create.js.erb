@@ -1,0 +1,8 @@
+
+(function(){
+    var container = document.getElementById("msgs");
+    var divCount = document.getElementById("count");
+    divCount.textContent = <%= Message.count %>
+    divCount.textContent += '<%= escape_javascript(render 'queries') %>';
+    container.insertAdjacentHTML('beforeend','<%= escape_javascript(render 'messages') %>');
+}).call(this)
