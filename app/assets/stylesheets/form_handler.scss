@@ -3,6 +3,18 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 #msgs{
-  float: right;
   list-style-type: none;
+}
+
+.res{
+  float: right;
+}
+
+.containerList{
+  height: 200px;
+  overflow: auto;
+}
+
+#count{
+  text-align: center;
 }
